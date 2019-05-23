@@ -10,7 +10,6 @@
 
 #include "battleship.h"
 
-
 static CellContent myField[10][10];
 static CellContent enemyField[10][10];
 static CellContent guesses[10][10];
@@ -41,8 +40,10 @@ CellContent get_shot(int row, int col)
 bool shoot(int row, int col)
 {
     if(!(row> -1 && row< 10 && col>-1&&col<10 ))return false;
-    for (int i = -1; i <= 1; ++i) {
-        for (int j = -1; j <= 1; ++j) {
+    for (int i = -1; i <= 1; ++i)
+    {
+        for (int j = -1; j <= 1; ++j)
+        {
             if(row+i> -1 && row+i< 10 && col+j>-1&&col+j<10)guesses[row+i][col+j] = enemyField[row+i][col+j];
         }
     }
